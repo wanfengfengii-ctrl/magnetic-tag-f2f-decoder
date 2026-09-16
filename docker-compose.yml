@@ -1,0 +1,27 @@
+# 磁标脉冲串解码器 —— Docker Compose
+#
+# 常用命令：
+#   docker compose up --build web                   # 默认宿主 8080 -> 容器 80
+#   WEB_PORT=9090 docker compose up --build web     # 用 WEB_PORT 覆盖宿主端口
+#   docker compose up --build verify                # 一次性验收，退出码即结果
+#
+# WEB_PORT 只覆盖宿主侧端口；容器内 nginx 始终监听 80。
+
+services:
+  web:
+    build:
+      context: .
+      target: web
+    image: magstripe-web:latest
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    restart: unless-stopped
+
+  # 一次性验收服务：类型检查 + Vitest 单测 + Playwright 端到端，
+  # 全部通过则容器以 0 退出；Playwright 在容器内自行启动 Vite dev server。
+  verify:
+    build:
+      context: .
+      target: verify
+    image: magstripe-verify:latest
+    restart: "no"

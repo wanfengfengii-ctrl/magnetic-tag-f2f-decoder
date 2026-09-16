@@ -1,0 +1,290 @@
+:root {
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --primary: #1d4ed8;
+  --danger-bg: #fef2f2;
+  --danger-line: #fecaca;
+  --danger-ink: #991b1b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 64px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.input-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+textarea {
+  width: 100%;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: var(--primary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  font: inherit;
+  border-radius: 8px;
+  padding: 7px 12px;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+}
+
+button:hover {
+  background: #eef2ff;
+}
+
+button.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+button.primary:hover {
+  background: #1e40af;
+}
+
+.errors {
+  margin-top: 14px;
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-line);
+  color: var(--danger-ink);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.errors ol {
+  margin: 6px 0 0;
+  padding-left: 22px;
+}
+
+.errors code {
+  background: rgba(153, 27, 27, 0.08);
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+.result-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.badge {
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.badge.decoded {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.ambiguous {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.badge.unreadable {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.sweep-meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.digits-line {
+  font-size: 18px;
+}
+
+.digits-line strong {
+  font-family: ui-monospace, monospace;
+  font-size: 26px;
+  letter-spacing: 2px;
+  background: #ecfdf5;
+  padding: 2px 10px;
+  border-radius: 6px;
+  color: #065f46;
+}
+
+.tau-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tau-chip {
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+}
+
+h3 {
+  margin: 20px 0 8px;
+  font-size: 15px;
+}
+
+.diagram-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+  padding: 6px 4px;
+}
+
+.legend {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  margin-right: 4px;
+  vertical-align: -1px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13.5px;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+th {
+  background: #f8fafc;
+}
+
+.mono,
+.digits-cell {
+  font-family: ui-monospace, monospace;
+}
+
+tr.role-start td {
+  background: #eff6ff;
+}
+
+tr.role-payload td {
+  background: #f0fdf4;
+}
+
+tr.role-end td {
+  background: #fff7ed;
+}
+
+tr.role-lrc td {
+  background: #faf5ff;
+}
+
+.lrc-line {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.sweep-details {
+  margin-top: 16px;
+}
+
+.sweep-details summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+
+tr.sweep-ok td {
+  background: #f0fdf4;
+}
+
+tr.sweep-bad td {
+  color: #991b1b;
+}
+
+.panel-unreadable p {
+  margin: 4px 0;
+}

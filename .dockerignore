@@ -1,0 +1,10 @@
+node_modules/
+.npm-cache/
+.syslib/
+dist/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.git/
+*.log
